@@ -1,7 +1,6 @@
 //write a prompt for the user to input rock paper or scissors
 const playerSelection = prompt('Choose your move!').toLowerCase();
 
-
 //write a function that generate a random response in the form of rock paper scissors
 const computerSelection = getComputerChoice();
 
