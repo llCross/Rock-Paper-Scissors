@@ -1,6 +1,6 @@
 //write a prompt for the user to input rock paper or scissors
 
-const getUserChoice = (userInput) => {
+const playerSelection = (userInput) => {
     if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissor'){console.log(userInput);
 } else {console.log('invalid user input')}
 }
@@ -19,22 +19,22 @@ function getComputerChoice () {
     }
 }
 //Write a function that determines the winner and the loser of the game
-function determineOutcome(getUserChoice, getComputerChoice) {
-    getUserChoice = getUserChoice.toLowerCase();
+function determineOutcome(playerSelection, getComputerChoice) {
+    playerSelection = playerSelection.toLowerCase();
 
-    if(getUserChoice === computerSelection){
+    if(playerSelection === computerSelection){
         return 'It\'s a tie!'
     }
 
-    else if(getUserChoice === 'rock' && computerSelection === 'paper'){
+    else if(playerSelection === 'rock' && computerSelection === 'paper'){
         return 'You Lose!'
     }
 
-    else if(getUserChoice === 'paper' && computerSelection === 'scissor'){
+    else if(playerSelection === 'paper' && computerSelection === 'scissor'){
         return 'You Lose!'
     }
 
-    else if(getUserChoice === 'scissor' && computerSelection === 'rock'){
+    else if(playerSelection === 'scissor' && computerSelection === 'rock'){
         return 'You Lose!'
     }
     
