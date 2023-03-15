@@ -21,6 +21,7 @@ function getComputerChoice () {
 }
 //Write a function that determines the winner and the loser of the game
 function determineOutcome(getUserChoice, getComputerChoice) {
+    getUserChoice = getUserChoice.toLowerCase();
 
     if(getUserChoice === computerSelection){
         return 'It\'s a tie!'
