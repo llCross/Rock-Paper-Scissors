@@ -1,4 +1,11 @@
-//write a function called getComputerChoice that will randomly return Rock, Paper, or Scissors
+//write a prompt for the user to input rock paper or scissors
+
+const getUserChoice = (userInput) => {
+    userInput = userInput.toLowerCase();
+    if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissor'){console.log(userInput);
+} else {console.log('invalid user input')}
+}
+//write a function that generate a random response in the form of rock paper scissors
 const computerSelection = getComputerChoice();
 
 function getComputerChoice () {
@@ -12,8 +19,5 @@ function getComputerChoice () {
             return 'Scissor';
     }
 }
-//write a function that plays a single round of Rock Paper Scissors that uses 2 parameters (playerSelection, computerSelection)
-//function 2 need to also declare the winner of each round
-//make playerSelection function case insensitive
-//IMPORTANT!!!  you want to return the results of this function not console.log them
-//write a function called game() then call the playRound function inside of this one to play a 5 round game that keeps score and reports winners and loser at the end.
+//write a function that plays a single round of the game
+//Write a function that plays a 5 round game
