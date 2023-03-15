@@ -12,12 +12,36 @@ function getComputerChoice () {
     const randomNumber = Math.floor(Math.random()*3);
     switch (randomNumber) {
         case 0:
-            return 'Rock';
+            return 'rock';
         case 1:
-            return 'Paper';
+            return 'paper';
         case 2:
-            return 'Scissor';
+            return 'scissor';
     }
 }
+//Write a function that determines the winner and the loser of the game
+function determineOutcome(getUserChoice, getComputerChoice) {
+
+    if(getUserChoice === computerSelection){
+        return 'It\'s a tie!'
+    }
+
+    else if(getUserChoice === 'rock' && computerSelection === 'paper'){
+        return 'You Lose!'
+    }
+
+    else if(getUserChoice === 'paper' && computerSelection === 'scissor'){
+        return 'You Lose!'
+    }
+
+    else if(getUserChoice === 'scissor' && computerSelection === 'rock'){
+        return 'You Lose!'
+    }
+    
+    else {
+        return 'You Win!'
+    }
+}
+
 //write a function that plays a single round of the game
 //Write a function that plays a 5 round game
