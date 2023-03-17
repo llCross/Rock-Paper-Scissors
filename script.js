@@ -1,14 +1,19 @@
+const getPlayerChoice = playerSelection();
+const getComputerChoice = computerSelection(); 
+
 //Write a function that keeps tab of scores
 let userScore = parseInt(0);
 let compScore = parseInt(0);
 
 //write a prompt for the user to input rock paper or scissors
-const playerSelection = prompt('Choose your move!').toLowerCase();
 
+function playerSelection () {
+    move = prompt('Choose your move!').toLowerCase();
+    return move;
+}
 //write a function that generate a random response in the form of rock paper scissors
-const computerSelection = getComputerChoice();
 
-function getComputerChoice () {
+function computerSelection () {
     const randomNumber = Math.floor(Math.random()*3);
     switch (randomNumber) {
         case 0:
@@ -19,24 +24,26 @@ function getComputerChoice () {
             return 'scissor';
     }
 }
-//Write a function that determines the winner and the loser of the game
-function determineOutcome(playerSelection, computerSelection) {
 
-    if(playerSelection === computerSelection){
+
+//Write a function that determines the winner and the loser of the game
+function determineOutcome(getPlayerChoice, getComputerChoice) {   
+
+    if(getPlayerChoice === getComputerChoice){
         return 'It\'s a tie!';
     }
 
-    else if(playerSelection === 'rock' && computerSelection === 'paper'){
+    else if(getPlayerChoice === 'rock' && getComputerChoice === 'paper'){
         compScore++;
         return 'You Lose!';
     }
 
-    else if(playerSelection === 'paper' && computerSelection === 'scissor'){
+    else if(getPlayerChoice === 'paper' && getComputerChoice === 'scissor'){
         compScore++;
         return 'You Lose!';
     }
 
-    else if(playerSelection === 'scissor' && computerSelection === 'rock'){
+    else if(getPlayerChoice === 'scissor' && getComputerChoice === 'rock'){
         compScore++;
         return 'You Lose!';
     }
@@ -47,14 +54,15 @@ function determineOutcome(playerSelection, computerSelection) {
     }
 }
 //write a function that plays a single round of the game
-function playGame () {
-    console.log('You chose:' + playerSelection)
-    console.log('The enemy chose:' + computerSelection)
-    console.log(determineOutcome(playerSelection, computerSelection))
+function playRound () {
+    console.log('You chose:' + playerSelection ())
+    console.log('The enemy chose:' + computerSelection())
+    console.log(determineOutcome(getPlayerChoice, getComputerChoice))
     console.log('User Score: ' + userScore)
     console.log('Comp Score: ' + compScore)
 }
-playGame()
-
-
-//Write a function that plays a 5 round game
+playRound ();
+//Write a function that plays a 5 round game while also keeping tabs of score
+    for (let i=1;i<5;i++) {
+        playRound ()
+    }
