@@ -32,32 +32,26 @@ let determineOutcome;
         determineOutcome = 'It\'s a tie!';
     }
 
-    else if(playerSelection === 'rock' && computerSelection === 'paper'){
+    else if ((playerSelection === 'rock' && computerSelection === 'paper') || 
+            (playerSelection === 'paper' && computerSelection === 'scissor') ||
+            (playerSelection === 'scissor' && computerSelection === 'rock')){
         compScore++;
         determineOutcome = 'You Lose!';
-    }
-
-    else if(playerSelection === 'paper' && computerSelection === 'scissor'){
-        compScore++;
-        determineOutcome = 'You Lose!';
-    }
-
-    else if(playerSelection === 'scissor' && computerSelection === 'rock'){
-        compScore++;
-        determineOutcome = 'You Lose!';
-    }
-    
-    else {
+    }   
+    else if ((playerSelection === 'rock' && computerSelection === 'scissor') || 
+    (playerSelection === 'paper' && computerSelection === 'rock') ||
+    (playerSelection === 'scissor' && computerSelection === 'paper')){
         userScore++;
         determineOutcome = 'You Win!';
     }
+    else {determineOutcome = 'Invalid Player Input!'}
 
 //Print Results
-    console.log('You Chose: ' + playerSelection);
-    console.log('Enemy Chose: ' + computerSelection);
-    console.log(determineOutcome);
-    console.log('UserScore: ' + userScore);
-    console.log('Comp Score: ' + compScore);
+    alert('You Chose: ' + playerSelection +
+        '\nEnemy Chose: ' + computerSelection +
+        '\n' + determineOutcome +
+        '\nUserScore: ' + userScore +
+        '\nComp Score: ' + compScore);
 }
 
 //function that play 5 rounds
@@ -65,8 +59,8 @@ function playGame() {
     for (let i=0;i<5;i++){
         playRound();
     }
-    console.log('Game Over!');
-    console.log('Final Score: UserScore: ' + userScore + ' Enemy Score: ' + compScore);
+    alert('Game Over!' +
+        '\nFinal Score! \nUserScore: ' + userScore + ' \nEnemy Score: ' + compScore);
 }
 
 playGame();
