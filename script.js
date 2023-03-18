@@ -21,7 +21,7 @@ function getComputerChoice () {
 function playRound() {  
 
 //playerInput
-let playerSelection = prompt("Choose you move! rock, paper, or scissor?").toLowerCase();
+let playerSelection = prompt("Choose your move! rock, paper, or scissor?").toLowerCase();
 
 //computerInput
 let computerSelection = getComputerChoice();
