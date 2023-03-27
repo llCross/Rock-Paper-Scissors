@@ -12,7 +12,7 @@ function getComputerChoice () {
         case 1:
             return 'paper';
         case 2:
-            return 'scissor';
+            return 'scissors';
     }
 }
 
@@ -21,7 +21,7 @@ function getComputerChoice () {
 function playRound() {  
 
 //playerInput
-let playerSelection = prompt("Choose your move! rock, paper, or scissor?").toLowerCase();
+let playerSelection = prompt("Choose your move! rock, paper, or scissors?").toLowerCase();
 
 //computerInput
 let computerSelection = getComputerChoice();
@@ -33,14 +33,14 @@ let determineOutcome;
     }
 
     else if ((playerSelection === 'rock' && computerSelection === 'paper') || 
-            (playerSelection === 'paper' && computerSelection === 'scissor') ||
-            (playerSelection === 'scissor' && computerSelection === 'rock')){
+            (playerSelection === 'paper' && computerSelection === 'scissors') ||
+            (playerSelection === 'scissors' && computerSelection === 'rock')){
         compScore++;
         determineOutcome = 'You Lose!';
     }   
-    else if ((playerSelection === 'rock' && computerSelection === 'scissor') || 
+    else if ((playerSelection === 'rock' && computerSelection === 'scissors') || 
     (playerSelection === 'paper' && computerSelection === 'rock') ||
-    (playerSelection === 'scissor' && computerSelection === 'paper')){
+    (playerSelection === 'scissors' && computerSelection === 'paper')){
         userScore++;
         determineOutcome = 'You Win!';
     }
