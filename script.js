@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 //Write a function that keeps tab of scores
 let userScore = parseInt(0);
 let compScore = parseInt(0);
@@ -18,13 +19,7 @@ function getComputerChoice () {
 
 
 //Write a function that plays a single round of the game
-function playRound() {  
-
-//playerInput
-let playerSelection = prompt("Choose your move! rock, paper, or scissors?").toLowerCase();
-
-//computerInput
-let computerSelection = getComputerChoice();
+function playRound(playerSelection, computerSelection) {  
 
 //Determines Outcome
 let determineOutcome;
@@ -47,20 +42,36 @@ let determineOutcome;
     else {determineOutcome = 'Invalid Player Input!'}
 
 //Print Results
-    alert('You Chose: ' + playerSelection +
+    console.log('You Chose: ' + playerSelection +
         '\nEnemy Chose: ' + computerSelection +
         '\n' + determineOutcome +
         '\nUserScore: ' + userScore +
         '\nComp Score: ' + compScore);
+
+const userScoreboard = document.querySelector('.player-score')
+const compScoreboard = document.querySelector('.enemy-score')
+
+userScoreboard.textContent = `Your Score: ${userScore}`;
+compScoreboard.textContent = `Enemy Score: ${compScore}`;
+
+const computerChoice = document.querySelector('.ai-choice')
+computerChoice.textContent = `The Enemy Chose: ${computerSelection}!`;
+
 }
 
-//function that play 5 rounds
-function playGame() {
-    for (let i=0;i<5;i++){
-        playRound();
-    }
-    alert('Game Over!' +
-        '\nFinal Score! \nUserScore: ' + userScore + ' \nEnemy Score: ' + compScore);
+// Write a function that gets player selection and computer selection, and then calls playRound
+function getSelectionsAndPlayRound(event) {
+    const playerSelection = event.target.value;
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
 }
 
-playGame();
+// Get references to the buttons and add click listeners
+const rockButton = document.getElementById('rock-button');
+const paperButton = document.getElementById('paper-button');
+const scissorsButton = document.getElementById('scissors-button');
+
+rockButton.addEventListener('click', getSelectionsAndPlayRound);
+paperButton.addEventListener('click', getSelectionsAndPlayRound);
+scissorsButton.addEventListener('click', getSelectionsAndPlayRound);
+});

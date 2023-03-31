@@ -1,0 +1,27 @@
+body {
+    margin: 2px;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+}
+
+.content {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    flex-direction: column;
+    width: 1152px;
+    min-height: 99vh;
+    border: 2px solid black;
+}
+
+.scoreboard {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    width: 576px;
+    min-height: 99vh;
+    border: 2px solid black;
+}

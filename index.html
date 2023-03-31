@@ -7,9 +7,24 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="instructions"></div>
-    <div class="aichoice"></div>
-    <div class="choices"></div>
-    <div class="scoreboard"></div>
+    <div class="main-container">
+        <div class="content">
+            <div class="ai-choice">
+                The Enemy Chose:
+            </div>
+            <div class="dialogue">
+                Please choose your move!
+            </div>
+            <div class="player-choice">
+                <button id="rock-button" value="rock">rock</button>
+                <button id="paper-button" value="paper">paper</button>
+                <button id="scissors-button" value="scissors">scissors</button>
+            </div>
+        </div>
+        <div class="scoreboard">
+            <div class="player-score">Your Score:</div>
+            <div class="enemy-score">Enemy Score:</div>
+        </div>
+    </div>
 </body>
 </html>
