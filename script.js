@@ -55,13 +55,13 @@ userScoreboard.textContent = `Your Score: ${userScore}`;
 compScoreboard.textContent = `Enemy Score: ${compScore}`;
 
 const computerChoice = document.querySelector('.ai-choice')
-computerChoice.textContent = `The Enemy Chose: ${computerSelection}!`;
+computerChoice.textContent = `${computerSelection}!`.toUpperCase();
 
 }
 
 // Write a function that gets player selection and computer selection, and then calls playRound
 function getSelectionsAndPlayRound(event) {
-    const playerSelection = event.target.value;
+    const playerSelection = event.currentTarget.value;
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
 }
