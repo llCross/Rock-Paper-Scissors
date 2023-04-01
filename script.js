@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    simulateTyping("Please choose your move!");
 //Write a function that keeps tab of scores
 let userScore = parseInt(0);
 let compScore = parseInt(0);
@@ -74,4 +75,28 @@ const scissorsButton = document.getElementById('scissors-button');
 rockButton.addEventListener('click', getSelectionsAndPlayRound);
 paperButton.addEventListener('click', getSelectionsAndPlayRound);
 scissorsButton.addEventListener('click', getSelectionsAndPlayRound);
+
+//trying the typing animation using javascript for loop
+function simulateTyping(text) {
+    const textElement = document.querySelector('.dialogue');
+
+    textElement.textContent = '';
+  
+    for (let i = 0; i < text.length; i++) {
+      setTimeout(() => {
+        textElement.textContent += text.charAt(i);
+      }, 50 * i);
+    }
+  }
+/*  
+rockButton.addEventListener('click', () => {
+    simulateTyping("You chose ROCK!");
+});
+paperButton.addEventListener('click', () => {
+    simulateTyping("You chose PAPER!");
+    });
+scissorsButton.addEventListener('click', () => {
+    simulateTyping("You chose SCISSORS!");
+        });
+*/
 });
