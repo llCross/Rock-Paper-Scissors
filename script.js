@@ -42,7 +42,7 @@ let determineOutcome;
     else {determineOutcome = 'Invalid Player Input!'}
 
 //Print Results
-    console.log('You Chose: ' + playerSelection +
+console.log('You Chose: ' + playerSelection +
         '\nEnemy Chose: ' + computerSelection +
         '\n' + determineOutcome +
         '\nUserScore: ' + userScore +

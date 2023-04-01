@@ -1,3 +1,7 @@
+* {
+    border: solid 2px red;
+}
+
 body {
     margin: 2px;
     padding: 0;
@@ -5,6 +9,8 @@ body {
 
 .main-container {
     display: flex;
+    flex: auto;
+    height: 99vh;
 }
 
 .content {
@@ -12,9 +18,41 @@ body {
     flex: auto;
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
     width: 1152px;
-    min-height: 99vh;
+    height: 99%;
     border: 2px solid black;
+}
+
+.score-title {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.player-choice {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#rock-button {
+    width: 33%;
+    height: 250px;
+    background-color: blue;
+}
+
+#paper-button {
+    width: 33%;
+    height: 250px;
+    background-color: green;
+}
+
+#scissors-button {
+    width: 33%;
+    height: 250px;
+    background-color: red;
 }
 
 .scoreboard {
@@ -22,6 +60,7 @@ body {
     flex: auto;
     flex-direction: column;
     width: 576px;
-    min-height: 99vh;
+    height: 99%;
     border: 2px solid black;
+    font-size: 24px;
 }
