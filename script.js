@@ -88,7 +88,7 @@ function simulateTyping(text) {
       }, 50 * i);
     }
   }
-/*  
+  
 rockButton.addEventListener('click', () => {
     simulateTyping("You chose ROCK!");
 });
@@ -98,5 +98,5 @@ paperButton.addEventListener('click', () => {
 scissorsButton.addEventListener('click', () => {
     simulateTyping("You chose SCISSORS!");
         });
-*/
+
 });
